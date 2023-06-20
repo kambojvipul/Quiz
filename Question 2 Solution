@@ -1,0 +1,27 @@
+Ans 2 A) I have gone through the Inout A and out B, where the function is 
+
+B = f(A)
+
+Function = x * 100 + y * 10 + z * 1
+
+where x, y, z are a-z or A-Z or 0-9.
+
+I have gound that inputs are of three digits between 000 to 999.
+
+
+Ans 2 B) To find values of inputs a-z, A-Z, 0-9 does not seem to be possible with data. I tried with ASCII code, it did not work out. I could not find pattern in data. What i found is above equation. 
+
+
+And 2 C) Maximum would be :
+
+every input is having maximum value that is 999.
+
+x=y=z=999
+
+maximum output = 999*100 + 999*10 + 999 = 110889
+min = 0 
+
+
+
+
+
