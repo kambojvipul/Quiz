@@ -1,0 +1,62 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <malloc.h>
+#include <string.h>
+
+int *calculate(int area, int M, int N){
+    int *arr = malloc(sizeof(3));
+    if(M==N){
+        arr[0]=area-M*N;arr[1]=M;arr[2]=N;
+        return arr;
+    }
+    else{
+        int l_d, h_d, diff_area;
+        if(M>N){
+            l_d = N;
+            h_d = M;
+        }
+        else{
+            l_d = M;
+            h_d = N;
+        }
+        diff_area = h_d*l_d - l_d*l_d;
+        arr[0]=diff_area;arr[1]=h_d-l_d;arr[2]=l_d;
+        return arr;
+    }
+}
+
+int * square(int M, int N){
+    int i = 1;
+    int *array = malloc(sizeof(100));
+    int area = M*N;
+    int *result = calculate(area, M, N);
+    area = result[0];
+    M = result[1];
+    N = result[2];
+    array[i] = N;
+    i = i+1;
+    while(area>0){
+        int *result = calculate(area, M, N);
+        area = result[0];
+        M = result[1];
+        N = result[2];
+        array[i] = N;
+        i = i+1;
+    }
+    array[0]=i-1;
+    return array;
+}
+
+
+
+int main() {
+    
+    int *final_result = square(100,35);
+    for(int x=1;x<=final_result[0];x++)
+    {
+    printf("\n%d",final_result[x]);
+    printf("x");
+    printf("%d",final_result[x]);
+    }
+    return 0;
+}
